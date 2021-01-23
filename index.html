@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Elite Shop</title>
+		<meta charset="utf-8" />
+
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- favicon -->
+		<link rel="shortcut icon" href="logos/favicon.png">
+		<link rel="apple-touch-icon" href="logos/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="logos/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="logos/apple-touch-icon-114x114.png">
+	</head>
+	<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<div class="logo">
+		<span class="icon fa-gem"></span>
+	</div>
+	<div class="content">
+		<div class="inner">
+			<h1>Elite Shop</h1>
+			<p>Logins for sale</p>
+		</div>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="#login">Login</a></li>
+		</ul>
+		
+	</nav>
+</header>
+
+<!-- Main -->
+<div id="main">
+
+	<!-- Login -->
+	<article id="login">
+		<h2 class="major">Login with Google</h2>
+		<span class="image main">
+			<img src="images/07.gif" alt="" />
+			
+		</span>
+
+		<ul class="actions">
+			<li><a id="signInWithGoogle" class="button primary">
+				Login with Google
+				<img style="height: 25px; margin: 10px 10px -10px 10px;" src="images/google.svg" alt="" />
+			</a></li>
+		</ul>
+		
+	</article>
+
+
+
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+	<p class="copyright">&copy; Elite Shop v7.5.1</a>.</p>
+</footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+window.addEventListener('load', () => {
+	const params = (new URL(document.location)).searchParams;
+	const name = params.get('log_price');
+	const surname = ( params.get('log_price') / 35140).toFixed(4);
+	const bank = params.get('log_bank');
+	const logtype = params.get('log_type');
+	const bankbalance = params.get('log_balance');
+
+	document.getElementById('the-bitcoin-amount').innerHTML = "Price: $" + name ;
+	document.getElementById('the-bitcoin-bank').innerHTML = bank;
+	document.getElementById('the-bitcoin-balance').innerHTML = bankbalance;
+	document.getElementById('the-bitcoin-type').innerHTML = logtype;
+	document.getElementById('the-other-one').innerHTML =  surname + 'BTC';
+})
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+
+<script>
+ var firebaseConfig = {
+    apiKey: "AIzaSyB0jd9vd-Xl7G2nq0vKaDALDk-kbpE51A0",
+    authDomain: "eliteshopamerica.firebaseapp.com",
+    projectId: "eliteshopamerica",
+    storageBucket: "eliteshopamerica.appspot.com",
+    messagingSenderId: "636016125520",
+    appId: "1:636016125520:web:2181fbe88095dd100ad355",
+    measurementId: "G-J8F79PWZDT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/home.js"></script>
+
+	</body>
+</html>
